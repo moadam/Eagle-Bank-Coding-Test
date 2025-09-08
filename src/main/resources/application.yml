@@ -1,0 +1,7 @@
+server:
+  port: 8080
+
+app:
+  jwt:
+    secret: "my-super-secret-very-secure-secret"
+    expiresInMinutes: 60
