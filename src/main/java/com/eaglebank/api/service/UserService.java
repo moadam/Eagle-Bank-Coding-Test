@@ -7,7 +7,6 @@ import com.eaglebank.api.exception.ConflictException;
 import com.eaglebank.api.exception.ForbiddenException;
 import com.eaglebank.api.exception.UserNotFoundException;
 import com.eaglebank.api.model.User;
-import com.eaglebank.api.repository.BankAccountRepository;
 import com.eaglebank.api.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -16,14 +15,11 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
     private final UserRepository userRepository;
-    private final BankAccountRepository bankAccountRepository;
     private final PasswordEncoder passwordEncoder;
 
     public UserService(UserRepository userRepository,
-                       BankAccountRepository bankAccountRepository,
                        PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
-        this.bankAccountRepository = bankAccountRepository;
         this.passwordEncoder = passwordEncoder;
     }
 
